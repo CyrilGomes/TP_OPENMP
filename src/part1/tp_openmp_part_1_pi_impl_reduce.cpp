@@ -27,7 +27,7 @@ double step;
 using namespace std;
 void write_perf_csv(string version, int nb_thread, long nb_steps, float runtime){
   ofstream myfile;
-  myfile.open ("stats.csv", ios_base::app);
+  myfile.open ("stats_part1.csv", ios_base::app);
   myfile.precision(8);
   myfile <<"\""<<version<<"\"" << "," << nb_thread << "," << nb_steps << "," << setw(10)<<runtime << "\n";
 

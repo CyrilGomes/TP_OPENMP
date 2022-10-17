@@ -55,27 +55,37 @@ int main (int argc, char** argv)
         }
       }
 	  int i;
-	  double x, pi, sum = 0.0;
-	  
+	  int j;
+    double x, pi = 0;//sum = 2.0;
       step = 1.0/(double) num_steps;
 
       // Timer products.
       struct timeval begin, end; 
 
       gettimeofday( &begin, NULL );
+    
+    int N=nb_thread;
 
-    #pragma omp parallel for shared(sum) firstprivate(step) private(x)
-    for (i=1;i<= num_steps; i++){
-      x = (i-0.5)*step;
-      //cout << x  << " "<< i <<" "<< step << endl;
+    #pragma omp parallel for shared(pi) private(x)
+    for (j = 0; j < N; j++){
+      double sum = 0.0;
+      //#pragma omp for firstprivate(step) private(x) reduction(+:sum)
+      for (i=(num_steps / N) * j + 1;i<=(num_steps / N) * (j+1)  ; i++){
+        x = (i-0.5)*step;
+        //cout << x  << " "<< i <<" "<< step << endl;
 
-      #pragma omp critical
-      sum = sum + 4.0/(1.0+x*x);
+
+        sum = sum + 4.0/(1.0+x*x);
+
+      }
+
+      #pragma omp atomic
+      pi += sum;
+
     }
 
 
-
-	  pi = step * sum;
+	  pi = step * pi;
 
       
       gettimeofday( &end, NULL );
@@ -85,6 +95,6 @@ int main (int argc, char** argv)
                 1.0e-6 * ( end.tv_usec - begin.tv_usec );
                 
       printf("\n pi with %ld steps is %lf in %lf seconds\n ",num_steps,pi,time);
-      write_perf_csv("critical", nb_thread, num_steps, time);
+      write_perf_csv("n_reduce", nb_thread, num_steps, time);
 
 }
