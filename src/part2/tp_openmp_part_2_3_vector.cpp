@@ -224,6 +224,7 @@ double multiplyVectors(double* a, double* b, int sizea, int sizeb) {
 
   assert(sizea==sizeb);
   double sum = 0;
+  #pragma omp simd
   for (int i=0; i<sizea;i++){
     sum += a[i] * b[i];
   }
@@ -236,7 +237,7 @@ void write_perf_csv(int n, int m, int repeat, double runtime){
   ofstream myfile;
   myfile.open ("stats_part2.csv", ios_base::app);
   myfile.precision(8);
-  myfile<<"2_2"<<"," <<n<<"," << m << ","<< repeat << "," << runtime << "\n";
+  myfile<<"2_3"<<"," <<n<<"," << m << ","<< repeat << "," << runtime << "\n";
 
   myfile.close();
 }

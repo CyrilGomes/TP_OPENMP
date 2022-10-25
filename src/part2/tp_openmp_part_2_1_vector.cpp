@@ -234,7 +234,7 @@ void write_perf_csv(int n, int m, int repeat, double runtime){
   ofstream myfile;
   myfile.open ("stats_part2.csv", ios_base::app);
   myfile.precision(8);
-  myfile <<n<<"," << m << ","<< repeat << "," << runtime << "\n";
+  myfile<<"2_1"<<"," <<n<<"," << m << ","<< repeat << "," << runtime << "\n";
 
   myfile.close();
 }
