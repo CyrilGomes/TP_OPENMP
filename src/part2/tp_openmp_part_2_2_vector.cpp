@@ -56,14 +56,17 @@
 using namespace std;
 void checkSizes( int &N, int &M, int &S, int &nrepeat );
 double multiplyVectors(double* a, double* b, int sizea, int sizeb);
-void write_perf_csv(int n, int m, int repeat, double runtime);
+void write_perf_csv(int nb_threads, int n, int m, int repeat, double runtime);
+
 
 int main( int argc, char* argv[] )
 {
   int N = 4096;         // number of rows 2^12
   int M = 1024;         // number of columns 2^10
-  int S = 4096*1024;         // total size 2^22
+  int S = 4096*1024;    // total size 2^22
   int nrepeat = 100;  // number of repeats of the test
+  int nb_thread=2;
+
 
   // Read command line arguments.
   for ( int i = 0; i < argc; i++ ) {
@@ -82,6 +85,11 @@ int main( int argc, char* argv[] )
     else if ( strcmp( argv[ i ], "-nrepeat" ) == 0 ) {
       nrepeat = atoi( argv[ ++i ] );
     }
+    else if ( ( strcmp( argv[ i ], "-T" ) == 0 ) ) {
+      nb_thread = atol( argv[ ++i ] );
+      omp_set_num_threads(nb_thread);
+      printf( "  Nb_thread is %d\n", nb_thread );
+    } 
     else if ( ( strcmp( argv[ i ], "-h" ) == 0 ) || ( strcmp( argv[ i ], "-help" ) == 0 ) ) {
       printf( "  y^T*A*x Options:\n" );
       printf( "  -Rows (-N) <int>:      exponent num, determines number of rows 2^num (default: 2^12 = 4096)\n" );
@@ -171,7 +179,7 @@ int main( int argc, char* argv[] )
   printf( "  N( %d ) M( %d ) nrepeat ( %d ) problem( %g MB ) time( %g s ) bandwidth( %g GB/s )\n",
           N, M, nrepeat, Gbytes * 1000, time, Gbytes * nrepeat / time );
 
-  write_perf_csv(N, M, nrepeat, time); 
+  write_perf_csv(nb_thread,N, M, nrepeat, time); 
   std::free(A);
   std::free(y);
   std::free(x);
@@ -232,11 +240,11 @@ double multiplyVectors(double* a, double* b, int sizea, int sizeb) {
 
 }
 
-void write_perf_csv(int n, int m, int repeat, double runtime){
+void write_perf_csv(int nb_threads, int n, int m, int repeat, double runtime){
   ofstream myfile;
   myfile.open ("stats_part2.csv", ios_base::app);
   myfile.precision(8);
-  myfile<<"2_2"<<"," <<n<<"," << m << ","<< repeat << "," << runtime << "\n";
+  myfile<<"2_2 reduction"<<"," <<nb_threads<<"," <<n<<"," << m << ","<< repeat << "," << runtime << "\n";
 
   myfile.close();
 }
