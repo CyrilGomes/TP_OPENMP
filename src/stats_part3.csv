@@ -1,0 +1,361 @@
+name,nb_threads,n,runtime
+3 sequential,1,1,0.37462
+3_1 parallelized nodes,1,1,0.334383
+3_2 parallelized n r,1,1,0.283474
+3 sequential,1,1,0.356521
+3_1 parallelized nodes,1,1,0.379985
+3_2 parallelized n r,1,1,0.31231
+3 sequential,1,1,0.338874
+3_1 parallelized nodes,1,1,0.344664
+3_2 parallelized n r,1,1,0.300677
+3 sequential,1,1,0.347452
+3_1 parallelized nodes,1,1,0.329904
+3_2 parallelized n r,1,1,0.297124
+3 sequential,1,1,0.336022
+3_1 parallelized nodes,1,1,0.341948
+3_2 parallelized n r,1,1,0.281335
+3 sequential,1,1,0.321907
+3_1 parallelized nodes,1,1,0.32651
+3_2 parallelized n r,1,1,0.294917
+3 sequential,1,1,0.34398
+3_1 parallelized nodes,1,1,0.324473
+3_2 parallelized n r,1,1,0.289339
+3 sequential,1,1,0.318624
+3_1 parallelized nodes,1,1,0.378679
+3_2 parallelized n r,1,1,0.332354
+3 sequential,1,1,0.384907
+3_1 parallelized nodes,1,1,0.337092
+3_2 parallelized n r,1,1,0.293265
+3 sequential,1,1,0.331084
+3_1 parallelized nodes,1,1,0.335103
+3_2 parallelized n r,1,1,0.272239
+3 sequential,2,1,0.335393
+3_1 parallelized nodes,2,1,0.238328
+3_2 parallelized n r,2,1,0.206716
+3 sequential,2,1,0.344672
+3_1 parallelized nodes,2,1,0.231797
+3_2 parallelized n r,2,1,0.165259
+3 sequential,2,1,0.337692
+3_1 parallelized nodes,2,1,0.221877
+3_2 parallelized n r,2,1,0.184116
+3 sequential,2,1,0.389022
+3_1 parallelized nodes,2,1,0.252153
+3_2 parallelized n r,2,1,0.217833
+3 sequential,2,1,0.382393
+3_1 parallelized nodes,2,1,0.247387
+3_2 parallelized n r,2,1,0.203528
+3 sequential,2,1,0.336249
+3_1 parallelized nodes,2,1,0.231526
+3_2 parallelized n r,2,1,0.176382
+3 sequential,2,1,0.409878
+3_1 parallelized nodes,2,1,0.312271
+3_2 parallelized n r,2,1,0.215749
+3 sequential,2,1,0.381942
+3_1 parallelized nodes,2,1,0.264581
+3_2 parallelized n r,2,1,0.215889
+3 sequential,2,1,0.369815
+3_1 parallelized nodes,2,1,0.301805
+3_2 parallelized n r,2,1,0.218496
+3 sequential,2,1,0.389583
+3_1 parallelized nodes,2,1,0.291589
+3_2 parallelized n r,2,1,0.211495
+3 sequential,4,1,0.390129
+3_1 parallelized nodes,4,1,0.255284
+3_2 parallelized n r,4,1,0.166454
+3 sequential,4,1,0.391191
+3_1 parallelized nodes,4,1,0.248675
+3_2 parallelized n r,4,1,0.159733
+3 sequential,4,1,0.367004
+3_1 parallelized nodes,4,1,0.242303
+3_2 parallelized n r,4,1,0.121631
+3 sequential,4,1,0.356828
+3_1 parallelized nodes,4,1,0.230839
+3_2 parallelized n r,4,1,0.145926
+3 sequential,4,1,0.333135
+3_1 parallelized nodes,4,1,0.274896
+3_2 parallelized n r,4,1,0.14277
+3 sequential,4,1,0.384952
+3_1 parallelized nodes,4,1,0.238152
+3_2 parallelized n r,4,1,0.150606
+3 sequential,4,1,0.382166
+3_1 parallelized nodes,4,1,0.236117
+3_2 parallelized n r,4,1,0.151929
+3 sequential,4,1,0.380782
+3_1 parallelized nodes,4,1,0.259116
+3_2 parallelized n r,4,1,0.117945
+3 sequential,4,1,0.338926
+3_1 parallelized nodes,4,1,0.208743
+3_2 parallelized n r,4,1,0.128108
+3 sequential,4,1,0.341388
+3_1 parallelized nodes,4,1,0.251386
+3_2 parallelized n r,4,1,0.138436
+3 sequential,8,1,0.359177
+3_1 parallelized nodes,8,1,0.254905
+3_2 parallelized n r,8,1,0.106155
+3 sequential,8,1,0.354217
+3_1 parallelized nodes,8,1,0.233924
+3_2 parallelized n r,8,1,0.109349
+3 sequential,8,1,0.401968
+3_1 parallelized nodes,8,1,0.236908
+3_2 parallelized n r,8,1,0.105182
+3 sequential,8,1,0.368601
+3_1 parallelized nodes,8,1,0.322983
+3_2 parallelized n r,8,1,0.120969
+3 sequential,8,1,0.433539
+3_1 parallelized nodes,8,1,0.243886
+3_2 parallelized n r,8,1,0.100822
+3 sequential,8,1,0.390828
+3_1 parallelized nodes,8,1,0.231936
+3_2 parallelized n r,8,1,0.082084
+3 sequential,8,1,0.337248
+3_1 parallelized nodes,8,1,0.250387
+3_2 parallelized n r,8,1,0.097076
+3 sequential,8,1,0.380342
+3_1 parallelized nodes,8,1,0.221661
+3_2 parallelized n r,8,1,0.090607
+3 sequential,8,1,0.347003
+3_1 parallelized nodes,8,1,0.227173
+3_2 parallelized n r,8,1,0.097909
+3 sequential,8,1,0.355219
+3_1 parallelized nodes,8,1,0.21983
+3_2 parallelized n r,8,1,0.093409
+3 sequential,1,2,0.681532
+3_1 parallelized nodes,1,2,0.679142
+3_2 parallelized n r,1,2,0.578994
+3 sequential,1,2,0.707033
+3_1 parallelized nodes,1,2,0.678596
+3_2 parallelized n r,1,2,0.570116
+3 sequential,1,2,0.66393
+3_1 parallelized nodes,1,2,0.662725
+3_2 parallelized n r,1,2,0.580037
+3 sequential,1,2,0.740673
+3_1 parallelized nodes,1,2,0.753568
+3_2 parallelized n r,1,2,0.781753
+3 sequential,1,2,0.717234
+3_1 parallelized nodes,1,2,0.676687
+3_2 parallelized n r,1,2,0.669707
+3 sequential,1,2,0.722635
+3_1 parallelized nodes,1,2,0.818288
+3_2 parallelized n r,1,2,0.700149
+3 sequential,1,2,0.671881
+3_1 parallelized nodes,1,2,0.689144
+3_2 parallelized n r,1,2,0.592147
+3 sequential,1,2,0.66009
+3_1 parallelized nodes,1,2,0.647436
+3_2 parallelized n r,1,2,0.597241
+3 sequential,1,2,0.660135
+3_1 parallelized nodes,1,2,0.667602
+3_2 parallelized n r,1,2,0.576287
+3 sequential,1,2,0.662751
+3_1 parallelized nodes,1,2,0.693776
+3_2 parallelized n r,1,2,0.579282
+3 sequential,2,2,0.706095
+3_1 parallelized nodes,2,2,0.514562
+3_2 parallelized n r,2,2,0.377268
+3 sequential,2,2,0.746697
+3_1 parallelized nodes,2,2,0.478573
+3_2 parallelized n r,2,2,0.405817
+3 sequential,2,2,0.694067
+3_1 parallelized nodes,2,2,0.517469
+3_2 parallelized n r,2,2,0.471381
+3 sequential,2,2,0.759725
+3_1 parallelized nodes,2,2,0.54651
+3_2 parallelized n r,2,2,0.410905
+3 sequential,2,2,0.66113
+3_1 parallelized nodes,2,2,0.488788
+3_2 parallelized n r,2,2,0.418332
+3 sequential,2,2,0.694419
+3_1 parallelized nodes,2,2,0.649496
+3_2 parallelized n r,2,2,0.46522
+3 sequential,2,2,0.71552
+3_1 parallelized nodes,2,2,0.507647
+3_2 parallelized n r,2,2,0.367527
+3 sequential,2,2,0.66625
+3_1 parallelized nodes,2,2,0.482218
+3_2 parallelized n r,2,2,0.402911
+3 sequential,2,2,0.69476
+3_1 parallelized nodes,2,2,0.576629
+3_2 parallelized n r,2,2,0.524763
+3 sequential,2,2,0.811493
+3_1 parallelized nodes,2,2,0.590214
+3_2 parallelized n r,2,2,0.411866
+3 sequential,4,2,0.746902
+3_1 parallelized nodes,4,2,0.430588
+3_2 parallelized n r,4,2,0.298169
+3 sequential,4,2,0.783781
+3_1 parallelized nodes,4,2,0.399448
+3_2 parallelized n r,4,2,0.270701
+3 sequential,4,2,0.684206
+3_1 parallelized nodes,4,2,0.366876
+3_2 parallelized n r,4,2,0.253764
+3 sequential,4,2,0.73873
+3_1 parallelized nodes,4,2,0.432292
+3_2 parallelized n r,4,2,0.292867
+3 sequential,4,2,0.855878
+3_1 parallelized nodes,4,2,0.467924
+3_2 parallelized n r,4,2,0.239929
+3 sequential,4,2,0.745734
+3_1 parallelized nodes,4,2,0.478204
+3_2 parallelized n r,4,2,0.361293
+3 sequential,4,2,0.827978
+3_1 parallelized nodes,4,2,0.405965
+3_2 parallelized n r,4,2,0.261851
+3 sequential,4,2,0.684902
+3_1 parallelized nodes,4,2,0.369051
+3_2 parallelized n r,4,2,0.222365
+3 sequential,4,2,0.704968
+3_1 parallelized nodes,4,2,0.398223
+3_2 parallelized n r,4,2,0.202489
+3 sequential,4,2,0.718055
+3_1 parallelized nodes,4,2,0.363053
+3_2 parallelized n r,4,2,0.267307
+3 sequential,8,2,0.703944
+3_1 parallelized nodes,8,2,0.369774
+3_2 parallelized n r,8,2,0.206114
+3 sequential,8,2,0.70417
+3_1 parallelized nodes,8,2,0.339032
+3_2 parallelized n r,8,2,0.174168
+3 sequential,8,2,0.658564
+3_1 parallelized nodes,8,2,0.366812
+3_2 parallelized n r,8,2,0.178676
+3 sequential,8,2,0.66608
+3_1 parallelized nodes,8,2,0.385148
+3_2 parallelized n r,8,2,0.153549
+3 sequential,8,2,0.666392
+3_1 parallelized nodes,8,2,0.405587
+3_2 parallelized n r,8,2,0.148829
+3 sequential,8,2,0.654158
+3_1 parallelized nodes,8,2,0.337724
+3_2 parallelized n r,8,2,0.166282
+3 sequential,8,2,0.651402
+3_1 parallelized nodes,8,2,0.360237
+3_2 parallelized n r,8,2,0.184997
+3 sequential,8,2,0.659185
+3_1 parallelized nodes,8,2,0.339497
+3_2 parallelized n r,8,2,0.167136
+3 sequential,8,2,0.643787
+3_1 parallelized nodes,8,2,0.338692
+3_2 parallelized n r,8,2,0.16638
+3 sequential,8,2,0.649835
+3_1 parallelized nodes,8,2,0.3462
+3_2 parallelized n r,8,2,0.169667
+3 sequential,1,3,1.232753
+3_1 parallelized nodes,1,3,1.203282
+3_2 parallelized n r,1,3,0.987592
+3 sequential,1,3,1.195745
+3_1 parallelized nodes,1,3,1.135334
+3_2 parallelized n r,1,3,1.026969
+3 sequential,1,3,1.164132
+3_1 parallelized nodes,1,3,1.157099
+3_2 parallelized n r,1,3,0.993117
+3 sequential,1,3,1.182236
+3_1 parallelized nodes,1,3,1.166576
+3_2 parallelized n r,1,3,0.986566
+3 sequential,1,3,1.148387
+3_1 parallelized nodes,1,3,1.136898
+3_2 parallelized n r,1,3,0.994726
+3 sequential,1,3,1.153774
+3_1 parallelized nodes,1,3,1.146603
+3_2 parallelized n r,1,3,0.983855
+3 sequential,1,3,1.155706
+3_1 parallelized nodes,1,3,1.147511
+3_2 parallelized n r,1,3,0.994936
+3 sequential,1,3,1.147083
+3_1 parallelized nodes,1,3,1.145239
+3_2 parallelized n r,1,3,0.995356
+3 sequential,1,3,1.195326
+3_1 parallelized nodes,1,3,1.165708
+3_2 parallelized n r,1,3,1.08946
+3 sequential,1,3,1.192957
+3_1 parallelized nodes,1,3,1.143641
+3_2 parallelized n r,1,3,1.043694
+3 sequential,2,3,1.182081
+3_1 parallelized nodes,2,3,0.812855
+3_2 parallelized n r,2,3,0.673603
+3 sequential,2,3,1.229739
+3_1 parallelized nodes,2,3,0.823849
+3_2 parallelized n r,2,3,0.662766
+3 sequential,2,3,1.247324
+3_1 parallelized nodes,2,3,0.814269
+3_2 parallelized n r,2,3,0.57195
+3 sequential,2,3,1.159184
+3_1 parallelized nodes,2,3,0.759788
+3_2 parallelized n r,2,3,0.689736
+3 sequential,2,3,1.224791
+3_1 parallelized nodes,2,3,0.831001
+3_2 parallelized n r,2,3,0.622238
+3 sequential,2,3,1.209295
+3_1 parallelized nodes,2,3,0.860107
+3_2 parallelized n r,2,3,0.626698
+3 sequential,2,3,1.187998
+3_1 parallelized nodes,2,3,0.810876
+3_2 parallelized n r,2,3,0.676995
+3 sequential,2,3,1.218091
+3_1 parallelized nodes,2,3,0.848382
+3_2 parallelized n r,2,3,0.610256
+3 sequential,2,3,1.207457
+3_1 parallelized nodes,2,3,0.838052
+3_2 parallelized n r,2,3,0.651243
+3 sequential,2,3,1.300944
+3_1 parallelized nodes,2,3,0.868972
+3_2 parallelized n r,2,3,0.713187
+3 sequential,4,3,1.283075
+3_1 parallelized nodes,4,3,0.672453
+3_2 parallelized n r,4,3,0.498473
+3 sequential,4,3,1.201425
+3_1 parallelized nodes,4,3,0.640191
+3_2 parallelized n r,4,3,0.453062
+3 sequential,4,3,1.181516
+3_1 parallelized nodes,4,3,0.658782
+3_2 parallelized n r,4,3,0.501055
+3 sequential,4,3,1.259
+3_1 parallelized nodes,4,3,0.675244
+3_2 parallelized n r,4,3,0.55507
+3 sequential,4,3,1.285236
+3_1 parallelized nodes,4,3,0.687029
+3_2 parallelized n r,4,3,0.426657
+3 sequential,4,3,1.180227
+3_1 parallelized nodes,4,3,0.649361
+3_2 parallelized n r,4,3,0.444562
+3 sequential,4,3,1.217876
+3_1 parallelized nodes,4,3,0.638313
+3_2 parallelized n r,4,3,0.414577
+3 sequential,4,3,1.176044
+3_1 parallelized nodes,4,3,0.583842
+3_2 parallelized n r,4,3,0.472051
+3 sequential,4,3,1.204205
+3_1 parallelized nodes,4,3,0.607215
+3_2 parallelized n r,4,3,0.416028
+3 sequential,4,3,1.17629
+3_1 parallelized nodes,4,3,0.620578
+3_2 parallelized n r,4,3,0.449339
+3 sequential,8,3,1.347178
+3_1 parallelized nodes,8,3,0.83489
+3_2 parallelized n r,8,3,0.407365
+3 sequential,8,3,1.306682
+3_1 parallelized nodes,8,3,0.643713
+3_2 parallelized n r,8,3,0.319168
+3 sequential,8,3,1.238907
+3_1 parallelized nodes,8,3,0.639127
+3_2 parallelized n r,8,3,0.291506
+3 sequential,8,3,1.187939
+3_1 parallelized nodes,8,3,0.56152
+3_2 parallelized n r,8,3,0.250128
+3 sequential,8,3,1.127976
+3_1 parallelized nodes,8,3,0.574189
+3_2 parallelized n r,8,3,0.294405
+3 sequential,8,3,1.167907
+3_1 parallelized nodes,8,3,0.557227
+3_2 parallelized n r,8,3,0.247721
+3 sequential,8,3,1.154082
+3_1 parallelized nodes,8,3,0.623442
+3_2 parallelized n r,8,3,0.307923
+3 sequential,8,3,1.126128
+3_1 parallelized nodes,8,3,0.689037
+3_2 parallelized n r,8,3,0.289779
+3 sequential,8,3,1.125041
+3_1 parallelized nodes,8,3,0.55438
+3_2 parallelized n r,8,3,0.25755
+3 sequential,8,3,1.122672
+3_1 parallelized nodes,8,3,0.534501
+3_2 parallelized n r,8,3,0.266894

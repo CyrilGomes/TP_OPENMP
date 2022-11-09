@@ -2,15 +2,20 @@
 **  HISTORY: Written by Tim Mattson, Nov 1999.
 *            Modified and extended by Jonathan Rouzaud-Cornabas, Oct 2022
 */
-
 #include <limits>
 #include <cstdio>
 #include <cstdlib>
 #include <cstring>
 #include <sys/time.h>
+#include <iostream>
 #include <omp.h>
-static int N = 5;
+#include <fstream>
+#include <iomanip>
 
+using namespace std;
+
+static int N = 5;
+int num_threads = 1;
 #ifndef FS
 #define FS 38
 #endif
@@ -21,6 +26,16 @@ struct node
    int fibdata;
    struct node *next;
 };
+
+void write_perf_csv(int nb_threads, int n, double runtime){
+  ofstream myfile;
+  myfile.open ("stats_part3.csv", ios_base::app);
+  myfile.precision(8);
+  myfile<<"3_1 parallelized nodes"<<"," <<nb_threads<<"," <<n << "," << runtime << "\n";
+
+  myfile.close();
+}
+
 
 int fib(int n)
 {
@@ -78,6 +93,13 @@ int main(int argc, char *argv[])
       {
          N = atoi(argv[++i]);
          printf("  User num_node is %d\n", N);
+      }
+      else if ((strcmp(argv[i], "-T") == 0))
+      {
+         num_threads = atoi(argv[++i]);
+         printf("  User num_threads is %d\n", N);
+         omp_set_num_threads(num_threads);
+         
       }
       else if ((strcmp(argv[i], "-h") == 0) || (strcmp(argv[i], "-help") == 0))
       {
@@ -137,6 +159,6 @@ int main(int argc, char *argv[])
       free(p);
 
       printf("Compute Time: %f seconds\n", time);
-
+      write_perf_csv(num_threads, N, time);
       return 0;
    }

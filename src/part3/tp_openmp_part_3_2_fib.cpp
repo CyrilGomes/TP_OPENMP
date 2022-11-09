@@ -8,8 +8,15 @@
 #include <cstdlib>
 #include <cstring>
 #include <sys/time.h>
+#include <iostream>
 #include <omp.h>
+#include <fstream>
+#include <iomanip>
+
+using namespace std;
+
 static int N = 5;
+int num_threads = 1;
 
 #ifndef FS
 #define FS 38
@@ -18,44 +25,55 @@ static int N = 5;
 struct node
 {
    int data;
-   long long fibdata;
+   int fibdata;
    struct node *next;
 };
 
+void write_perf_csv(int nb_threads, int n, double runtime)
+{
+   ofstream myfile;
+   myfile.open("stats_part3.csv", ios_base::app);
+   myfile.precision(8);
+   myfile << "3_2 parallelized n r"
+          << "," << nb_threads << "," << n << "," << runtime << "\n";
+
+   myfile.close();
+}
+
+//
 #define CUTOFF 5
-long long fib_s(int n)
+int fib_s(int n)
 {
-    if (n == 0 || n == 1)
-        return n;
-    long long res, a, b;
-    a = fib_s(n - 1);
-    b = fib_s(n - 2);
-    res = a + b;
-    return res;
+   if (n < 2)
+      return n;
+   int res, a, b;
+   a = fib_s(n - 1);
+   b = fib_s(n - 2);
+   res = a + b;
+   return res;
 }
-long long fib_m(int n,int co)
+int fib_m(int n, int co)
 {
-    if (co >= CUTOFF) return fib_s(n);
-    if (n == 0 || n == 1)
-        return n;
-    long long res, a, b;
-    co++;
+   if (co >= CUTOFF)
+      return fib_s(n);
+   if (n < 2)
+      return n;
+   int res, a, b;
+   co++;
 #pragma omp task shared(a)
-    a = fib_m(n - 1,co);
+   a = fib_m(n - 1, co);
 #pragma omp task shared(b)
-    b = fib_m(n - 2,co);
+   b = fib_m(n - 2, co);
 #pragma omp taskwait
-    res = a + b;
-    return res;
+   res = a + b;
+   return res;
 }
-
-
 
 void processwork(struct node *p)
 {
    int n;
    n = p->data;
-   p->fibdata = fib_m(n,1);
+   p->fibdata = fib_m(n, 1);
 }
 
 struct node *init_list(struct node *p)
@@ -90,6 +108,13 @@ int main(int argc, char *argv[])
          N = atoi(argv[++i]);
          printf("  User num_node is %d\n", N);
       }
+      else if ((strcmp(argv[i], "-T") == 0))
+      {
+         num_threads = atoi(argv[++i]);
+         printf("  User num_threads is %d\n", N);
+         omp_set_num_threads(num_threads);
+         
+      }
       else if ((strcmp(argv[i], "-h") == 0) || (strcmp(argv[i], "-help") == 0))
       {
          printf("  Fib Options:\n");
@@ -114,41 +139,41 @@ int main(int argc, char *argv[])
    struct timeval begin, end;
 
    gettimeofday(&begin, NULL);
-   #pragma omp parallel
+#pragma omp parallel
    {
 
-      #pragma omp single
+#pragma omp single
       {
          while (p != NULL)
          {
 
-            #pragma omp task firstprivate(p)
+#pragma omp task firstprivate(p)
             {
                processwork(p);
             }
             p = p->next;
-
          }
       }
    }
 
-      gettimeofday(&end, NULL);
+   gettimeofday(&end, NULL);
 
-      // Calculate time.
-      double time = 1.0 * (end.tv_sec - begin.tv_sec) +
-                    1.0e-6 * (end.tv_usec - begin.tv_usec);
+   // Calculate time.
+   double time = 1.0 * (end.tv_sec - begin.tv_sec) +
+                 1.0e-6 * (end.tv_usec - begin.tv_usec);
 
-      p = head;
-      while (p != NULL)
-      {
-         printf("%d : %lld\n", p->data, p->fibdata);
-         temp = p->next;
-         free(p);
-         p = temp;
-      }
+   p = head;
+   while (p != NULL)
+   {
+      printf("%d : %d\n", p->data, p->fibdata);
+      temp = p->next;
       free(p);
-
-      printf("Compute Time: %f seconds\n", time);
-
-      return 0;
+      p = temp;
    }
+   free(p);
+
+   printf("Compute Time: %f seconds\n", time);
+   write_perf_csv(num_threads, N, time);
+
+   return 0;
+}
