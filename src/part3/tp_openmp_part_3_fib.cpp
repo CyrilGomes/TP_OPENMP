@@ -99,8 +99,7 @@ int main(int argc, char *argv[])
          num_threads = atoi(argv[++i]);
          printf("  User num_threads is %d\n", N);
          omp_set_num_threads(num_threads);
-         
-      }
+            }
       else if ((strcmp(argv[i], "-h") == 0) || (strcmp(argv[i], "-help") == 0))
       {
          printf("  Fib Options:\n");

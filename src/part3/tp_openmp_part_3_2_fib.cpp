@@ -60,11 +60,11 @@ int fib_m(int n, int co)
       return n;
    int res, a, b;
    co++;
-#pragma omp task shared(a)
+   #pragma omp task shared(a)
    a = fib_m(n - 1, co);
-#pragma omp task shared(b)
+   #pragma omp task shared(b)
    b = fib_m(n - 2, co);
-#pragma omp taskwait
+   #pragma omp taskwait
    res = a + b;
    return res;
 }
@@ -113,8 +113,7 @@ int main(int argc, char *argv[])
          num_threads = atoi(argv[++i]);
          printf("  User num_threads is %d\n", N);
          omp_set_num_threads(num_threads);
-         
-      }
+            }
       else if ((strcmp(argv[i], "-h") == 0) || (strcmp(argv[i], "-help") == 0))
       {
          printf("  Fib Options:\n");
@@ -139,15 +138,15 @@ int main(int argc, char *argv[])
    struct timeval begin, end;
 
    gettimeofday(&begin, NULL);
-#pragma omp parallel
+   #pragma omp parallel
    {
 
-#pragma omp single
+      #pragma omp single
       {
          while (p != NULL)
          {
 
-#pragma omp task firstprivate(p)
+            #pragma omp task firstprivate(p)
             {
                processwork(p);
             }

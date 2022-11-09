@@ -27,15 +27,16 @@ struct node
    struct node *next;
 };
 
-void write_perf_csv(int nb_threads, int n, double runtime){
-  ofstream myfile;
-  myfile.open ("stats_part3.csv", ios_base::app);
-  myfile.precision(8);
-  myfile<<"3_1 parallelized nodes"<<"," <<nb_threads<<"," <<n << "," << runtime << "\n";
+void write_perf_csv(int nb_threads, int n, double runtime)
+{
+   ofstream myfile;
+   myfile.open("stats_part3.csv", ios_base::app);
+   myfile.precision(8);
+   myfile << "3_1 parallelized nodes"
+          << "," << nb_threads << "," << n << "," << runtime << "\n";
 
-  myfile.close();
+   myfile.close();
 }
-
 
 int fib(int n)
 {
@@ -44,7 +45,8 @@ int fib(int n)
    {
       return (n);
    }
-   else{
+   else
+   {
 
       x = fib(n - 1);
       y = fib(n - 2);
@@ -52,8 +54,6 @@ int fib(int n)
       return (x + y);
    }
 }
-
-
 
 void processwork(struct node *p)
 {
@@ -99,7 +99,6 @@ int main(int argc, char *argv[])
          num_threads = atoi(argv[++i]);
          printf("  User num_threads is %d\n", N);
          omp_set_num_threads(num_threads);
-         
       }
       else if ((strcmp(argv[i], "-h") == 0) || (strcmp(argv[i], "-help") == 0))
       {
@@ -137,28 +136,27 @@ int main(int argc, char *argv[])
                processwork(p);
             }
             p = p->next;
-
          }
       }
    }
 
-      gettimeofday(&end, NULL);
+   gettimeofday(&end, NULL);
 
-      // Calculate time.
-      double time = 1.0 * (end.tv_sec - begin.tv_sec) +
-                    1.0e-6 * (end.tv_usec - begin.tv_usec);
+   // Calculate time.
+   double time = 1.0 * (end.tv_sec - begin.tv_sec) +
+                 1.0e-6 * (end.tv_usec - begin.tv_usec);
 
-      p = head;
-      while (p != NULL)
-      {
-         printf("%d : %d\n", p->data, p->fibdata);
-         temp = p->next;
-         free(p);
-         p = temp;
-      }
+   p = head;
+   while (p != NULL)
+   {
+      printf("%d : %d\n", p->data, p->fibdata);
+      temp = p->next;
       free(p);
-
-      printf("Compute Time: %f seconds\n", time);
-      write_perf_csv(num_threads, N, time);
-      return 0;
+      p = temp;
    }
+   free(p);
+
+   printf("Compute Time: %f seconds\n", time);
+   write_perf_csv(num_threads, N, time);
+   return 0;
+}
